@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:500,700|Roboto:400,900&display=swap');
+@import 'slick-slider-styles.scss';
+
+//font-family: 'Roboto', sans-serif;
+//font-family: 'Dosis', sans-serif;
+
+
+$colorBlue: #00a4d3;
+$colorLightBlue: #80d2e9;
+
+
+@mixin fontRoboto($fontSize, $fontWeight) {
+  font-family: 'Roboto', sans-serif;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin fontDosis($fontSize, $fontWeight) {
+  font-family: 'Dosis', sans-serif;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin bigButton($color, $fontColor) {
+  display: inline-block;
+  min-height: 3rem;
+  min-width: 12rem;
+  background-color: $color;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  color: $fontColor;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 3rem;
+  text-align: center;
+  @include fontRoboto(1rem, 400);
+  &:hover {
+    box-shadow: 0 2px 0.5rem lighten($color, 20);
+  }
+  &:active {
+    background-color: darken($color, 20);
+  }
+}
+
+
+html {
+  @include fontRoboto(16px, 400);
+
+  @media screen and (max-width: 991px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 575px) {
+    font-size: 10px;
+  }
+
+  h1 {
+    @include fontDosis(4.5rem, 700);
+  }
+
+  h2 {
+    @include fontDosis(2.5rem, 700);
+    text-transform: uppercase;
+  }
+
+  //
+  //h3 {
+  //  @include fontPacifico(2.5em)
+  //}
+  //
+  //h4 {
+  //  font-size: 2em;
+  //}
+  .head-wrapper {
+    margin-bottom: 2rem;
+
+    p {
+      @include fontDosis(1.5rem, 500);
+    }
+  }
+
+  .section-padding {
+    padding: 5rem 15px;
+  }
+}
+
+
+header {
+  padding: 1rem 0;
+  background-color: $colorBlue;
+
+  .navbar {
+    .navbar-toggler {
+      border-color: $colorLightBlue;
+    }
+
+    .navbar-brand {
+      @media screen and (max-width: 430px) {
+        max-width: 180px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .navbar-collapse {
+      flex-wrap: wrap;
+      margin-left: 2rem;
+
+      .navbar-nav {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+
+        a {
+          color: #fff;
+        }
+
+        &:first-child {
+          border-bottom: 2px solid $colorLightBlue;
+
+          .form {
+            i {
+              color: #fff;
+            }
+
+            input[type=search] {
+              background: none;
+              border: none;
+              text-align: right;
+              outline: none;
+              color: #fff;
+              @media screen and (max-width: 1199px) {
+                text-align: left;
+              }
+
+              &::placeholder {
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          a {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-clouds {
+  background: $colorBlue url("../../build/img/clouds.png") top no-repeat/cover;
+  //height: 136px;
+  height: 8rem;
+  margin: -2px 0;
+}
+
+.hero-section {
+  background: #fbfcff url("../../build/img/hero-bg-kids.png") bottom right no-repeat;
+
+  .row {
+    .hero-section-slider {
+      margin-bottom: 2rem;
+
+      img {
+        width: 80%;
+        margin: auto;
+        border-radius: 10%;
+      }
+    }
+
+    .hero-info-wrapper {
+      text-align: center;
+      margin: auto;
+
+      h1 {
+        color: $colorBlue;
+      }
+
+      p {
+        @include fontDosis(3rem, 500);
+        color: $colorBlue;
+      }
+
+      a {
+        @include bigButton($colorBlue, #fff);
+      }
+    }
+  }
+}
+
+#section-academic {
+  background: url("../../build/img/butterfly-bg.jpg") no-repeat/cover;
+  color: #fff;
+
+  a {
+    @include bigButton(#fff, $colorBlue);
+  }
+
+  .image-container {
+    margin: auto;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#section-admission {
+  .head-wrapper {
+    h2 {
+      color: $colorBlue;
+    }
+  }
+
+  [class*=col-] {
+    overflow: hidden;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: 1200px) {
+      padding: 0.75rem;
+      .card-text {
+        font-size: 0.7rem;
+      }
+    }
+
+    .card-subtitle {
+      @include fontRoboto(1rem, 400);
+      color: #000;
+    }
+
+    .card-title {
+      @include fontDosis(1.5rem, 500);
+      color: $colorBlue;
+    }
+
+    .card-text {
+      @include fontRoboto(1rem, 400);
+      @media screen and (max-width: 1200px) and (min-width: 991px) {
+        font-size: 0.7rem;
+      }
+    }
+
+    .card-link {
+      text-transform: uppercase;
+      color: $colorBlue;
+    }
+  }
+
+  img {
+    width: 100%;
+    @media screen and (max-width: 991px) and (min-width: 420px) {
+      margin: -20% 0;
+    }
+    @media screen and (max-width: 419px) {
+      transform: scale(1.4);
+      margin-top: 20%;
+    }
+  }
+
+  .row:last-of-type {
+    margin-bottom: 3rem;
+  }
+
+  .section-link {
+    @include bigButton($colorBlue, #fff);
+    display: block;
+    max-width: 15rem;
+    margin: 0 auto;
+  }
+}
+
+.section-facilities {
+  background: $colorBlue url("../../build/img/schools-items-bg.jpg");
+
+  .facilities-info {
+    text-align: center;
+
+    .head-wrapper {
+      color: #fff;
+    }
+  }
+
+  img:first-of-type {
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+
+  .tiles {
+    padding-top: 5rem;
+  }
+
+  .tile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .tile {
+      width: 10rem;
+      max-height: 10rem;
+      box-sizing: border-box;
+      margin: 0.5rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 1.5rem;
+      text-align: center;
+      text-transform: capitalize;
+      color: $colorBlue;
+
+      &:before {
+        content: "";
+        padding-top: 100%;
+        float: left;
+      }
+
+      img {
+        height: 4.2rem;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}
+
+
+#section-teachers {
+  .head-wrapper {
+    h2 {
+      color: $colorBlue;
+    }
+  }
+
+  //.row:first-of-type {
+  //  margin-bottom: 30px;
+  //}
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .card {
+    border-color: transparent;
+
+    .card-img-top {
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    .card-body {
+      color: #fff;
+      text-transform: capitalize;
+      text-align: center;
+      background-color: $colorBlue;
+      border-radius: 0 0 2rem 2rem;
+      padding: 0.25rem;
+
+      .card-title {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}
+
+#section-reviews {
+  background: $colorBlue url("../../build/img/school-bg.jpg");
+  background-size: cover;
+
+  .blockquote {
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    color: #fff;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    .reviewers-photo {
+      background: url("../../build/img/quotes.png") no-repeat/contain;
+      width: 45%;
+      padding: 4rem;
+      margin: 0 auto;
+
+      @media screen and (max-width: 992px) {
+        width: 70%;
+      }
+      @media screen and (max-width: 768px) {
+        width: 80%;
+      }
+      @media screen and (max-width: 576px) {
+        width: 90%;
+        padding: 14%;
+      }
+
+      img {
+        width: 87%;
+        margin-left: 0.3rem;
+        border-radius: 50%;
+        @media screen and (max-width: 768px) {
+          width: 80%;
+          margin-left: 1.5rem;
+        }
+        @media screen and (max-width: 576px) {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .blockquote-footer {
+      @include fontDosis(2rem, 700);
+      color: #fff;
+      background-color: transparent;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    .blockquote-text {
+      font-size: 1rem;
+    }
+  }
+
+  .slick-dots {
+    bottom: -1rem;
+    left: calc(50% - 39px);
+
+    li {
+      button {
+        border-color: #fff;
+
+        &:hover {
+          outline: #fff;
+          background-color: lighten($colorLightBlue, 20);
+        }
+      }
+
+      &.slick-active button {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+#section-blog {
+  .head-wrapper {
+    h2 {
+      color: $colorBlue;
+    }
+  }
+
+  .card-deck {
+    @media screen and (max-width: 992px) {
+      flex-flow: column nowrap;
+    }
+
+    .card, .card-img-top {
+      border-radius: 2rem;
+    }
+
+    .card-footer {
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      text-align: center;
+    }
+
+    .card {
+      margin-bottom: 2rem;
+    }
+
+  }
+}
+
+#contacts {
+  //background: url("../../build/img/clouds-and-rainbow-bg.jpg") top/contain no-repeat;
+  & > img {
+    width: 100%;
+  }
+
+
+  .container {
+    //background: url("../../build/img/kidz-master-color-logo.png") right center no-repeat;
+    font-size: 1.25rem;
+
+    .socials, .quicklinks {
+      text-align: center;
+    }
+
+    .brand {
+      text-align: center;
+      padding-top: 5rem;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .contacts {
+      @media screen and (max-width: 575px) {
+        text-align: center;
+      }
+    }
+
+    strong {
+      color: $colorBlue;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .links {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $colorBlue;
+
+      &:hover {
+        color: darken($colorBlue, 20);
+      }
+    }
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .footer-image {
+    //background: #7db928 url("../../build/img/school-bg.png") bottom/contain no-repeat;
+    text-align: center;
+    text-transform: uppercase;
+    @include fontDosis(2rem, 700);
+    color: #fff;
+
+    img {
+      width: 100%;
+    }
+
+    p {
+      margin: 0;
+      background-color: #7db928;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
