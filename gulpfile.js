@@ -33,7 +33,13 @@ function styles() {
         .pipe(concat('style.css'))
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
-            cascade: false
+            // cascade: false
+            overrideBrowserslist: [
+                "last 2 version",
+                "> 1%",
+                "maintained node versions",
+                "not dead"
+            ]
         }))
         .pipe(cleanCSS({level: 2}))
         .pipe(sourcemaps.write('./'))
