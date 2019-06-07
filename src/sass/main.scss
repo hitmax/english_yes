@@ -49,8 +49,8 @@ html {
     font-size: 2.5rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: -2px;
-    word-spacing: 15px;
+    letter-spacing: -1px;
+    word-spacing: 10px;
 
     &:after {
       content: '';
@@ -232,6 +232,39 @@ html {
     margin-right: 2rem;
     p {
       border-top: 1px solid $colorRed;
+    }
+  }
+}
+
+.section-teachers {
+  padding: 2rem 15px;
+  h2 {
+    margin-bottom: 3rem;
+  }
+  .card {
+    margin-bottom: 2rem;
+  }
+}
+
+$grid-breakpoints: (
+        sm: 576px,
+        md: 768px,
+        lg: 992px
+) !default;
+
+$grid-gutter-width: 30px !default;
+
+// number of cards per line for each breakpoint
+$cards-per-line: (
+        sm: 1,
+        md: 2,
+        lg: 3
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+  @media (min-width: $breakpoint) {
+    .card-deck .card {
+      flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
     }
   }
 }
