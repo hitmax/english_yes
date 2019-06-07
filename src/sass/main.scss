@@ -218,18 +218,22 @@ html {
 .section-solutions {
   padding: 7rem 15px;
   background: url("../img/bg-photographer.png") center right no-repeat;
+
   h2 {
     max-width: 360px;
     margin-bottom: 6rem;
+
     &:after {
       content: '!';
     }
   }
+
   .solution {
     display: inline-block;
     width: 20%;
     vertical-align: top;
     margin-right: 2rem;
+
     p {
       border-top: 1px solid $colorRed;
     }
@@ -238,9 +242,11 @@ html {
 
 .section-teachers {
   padding: 2rem 15px;
+
   h2 {
     margin-bottom: 3rem;
   }
+
   .card {
     margin-bottom: 2rem;
   }
@@ -265,6 +271,26 @@ $cards-per-line: (
   @media (min-width: $breakpoint) {
     .card-deck .card {
       flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+    }
+  }
+}
+
+.section-price {
+  padding: 8rem 15px;
+  background: url("../img/bg-bigben.png") no-repeat left center/contain;
+
+  .price-wrapper {
+    width: 750px;
+    float: right;
+    strong {
+      color: $colorRed;
+    }
+
+    .week {
+      vertical-align: top;
+      box-sizing: border-box;
+      width: 49%;
+      display: inline-block;
     }
   }
 }
