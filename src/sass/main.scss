@@ -3,7 +3,7 @@
 
 //font-family: 'Play', sans-serif;
 
-$colorLightGrey: #f8f8f8;
+$colorLightGray: #f8f8f8;
 $colorGray: #f0f0f0;
 $colorRed: #f5112c;
 
@@ -170,7 +170,7 @@ html {
 }
 
 .section-situations {
-  background-color: $colorLightGrey;
+  background-color: $colorLightGray;
 
   h2 {
     max-width: 360px;
@@ -344,6 +344,50 @@ $cards-per-line: (
 
 }
 
+.section-feedback {
+  padding-bottom: 8rem;
+
+  h2 {
+    margin-bottom: 5rem;
+  }
+
+  .feedback {
+    width: 80%;
+    margin: 0 auto;
+    img {
+      display: inline-block;
+      width: 30%;
+      border-radius: 1rem;
+      @media screen and (max-width: 575px) {
+        display: block;
+        width: 50%;
+        margin: 0 auto 2rem;
+
+      }
+    }
+
+    .feedback-text {
+      display: inline-block;
+      width: 60%;
+      margin-left: 5%;
+      vertical-align: top;
+      h4 {
+        font-style: italic;
+        margin-bottom: 3rem;
+      }
+      @media screen and (max-width: 575px) {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        h4 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+}
+
 
 .section-hero.last-hero {
   .container {
@@ -360,7 +404,7 @@ $cards-per-line: (
 }
 
 footer.head {
-  background-color: $colorLightGrey;
+  background-color: $colorLightGray;
 }
 
 
