@@ -4,7 +4,7 @@
 //font-family: 'Play', sans-serif;
 
 $colorLightGrey: #f8f8f8;
-$colorGray: #c0c0c0;
+$colorGray: #f0f0f0;
 $colorRed: #f5112c;
 
 @mixin bigButton {
@@ -285,6 +285,7 @@ $cards-per-line: (
 
     strong {
       color: $colorRed;
+      font-size: 2rem;
     }
 
     .week {
@@ -295,6 +296,54 @@ $cards-per-line: (
     }
   }
 }
+
+.section-curriculum {
+  padding: 5rem 15px;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .curriculum-img {
+    margin-bottom: 30px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  [class^='col']:nth-child(odd) {
+    position: relative;
+
+    &:after {
+      font-size: 6rem;
+      font-weight: 700;
+      color: $colorGray;
+      position: absolute;
+      z-index: -1;
+      top: -6rem;
+      right: 0;
+    }
+  }
+
+  .memorization:after {
+    content: 'простота';
+  }
+
+  .communication:after {
+    content: 'talk';
+  }
+
+  .practice:after {
+    content: 'практика';
+  }
+
+  .repeating:after {
+    content: 'repeat';
+  }
+
+}
+
 
 .section-hero.last-hero {
   .container {
